@@ -1,5 +1,16 @@
 # metal-bat-api
 
+Expressjs API server 🎉, visit at: https://enigmatic-headland-66658.herokuapp.com/
+
+To get a valid Agroa access token:
+
+https://enigmatic-headland-66658.herokuapp.com/access-token/?channel={channel}&user={bar}
+
+Params:
+
+- channel: channel name
+- user: user id. Optional, if not passed it, token will created by the default user id which is `0`.
+
 ## Prerequisites
 
 You will need the following things properly installed on your computer.
