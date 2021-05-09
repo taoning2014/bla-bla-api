@@ -29,7 +29,7 @@ You will need the following things properly installed on your computer.
 
 **Debug mode**
 
-1. `node --inspect-brk ./bin/www`
+1. `NODE_ENV=debug node --inspect-brk ./bin/www`
 2. The terminal will log out something like: `Debugger listening on ws://127.0.0.1:9229/add69dec-7a8e-4571-bd96-d456cb68159b`
 3. Open Chrome debug console, paste the url into the navigation bar.
 4. Clikc the green node icon in the debug console
