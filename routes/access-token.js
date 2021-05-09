@@ -8,18 +8,29 @@ if (!(APP_ID && APP_CERTIFICATE)) {
   throw new Error('You must define an APP_ID and APP_CERTIFICATE');
 }
 
+function authCheck(req, res, next) {
+  if (process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'debug') {
+    next();
+    return;
+  }
+
+  if (req.get('origin') === 'https://bla-bla.app') {
+    next();
+    return;
+  }
+
+  res.status(401).end();
+}
+
 function nocache(req, res, next) {
   res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
   res.header('Expires', '-1');
   res.header('Pragma', 'no-cache');
-  console.log('tao debug');
-  console.log(req.get('origin'));
-  console.log(req.get('host'));
   next();
 }
 
 function generateAccessToken(req, resp) {
-  resp.header('Access-Control-Allow-Origin', '*');
+  resp.header('Access-Control-Allow-Origin', 'https://bla-bla.app');
 
   const { channel } = req.query;
   if (!channel) {
@@ -47,6 +58,6 @@ function generateAccessToken(req, resp) {
   });
 }
 
-router.get('/', nocache, generateAccessToken);
+router.get('/', authCheck, nocache, generateAccessToken);
 
 module.exports = router;
