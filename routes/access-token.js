@@ -30,7 +30,11 @@ function nocache(req, res, next) {
 }
 
 function generateAccessToken(req, resp) {
-  resp.header('Access-Control-Allow-Origin', 'https://bla-bla.app');
+  if (process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'debug') {
+    resp.header('Access-Control-Allow-Origin', '*');
+  } else {
+    resp.header('Access-Control-Allow-Origin', 'https://bla-bla.app');
+  }
 
   const { channel } = req.query;
   if (!channel) {
