@@ -1,15 +1,23 @@
-# metal-bat-api
+# bla-bla-api
 
-Expressjs API server 🎉, visit at: https://enigmatic-headland-66658.herokuapp.com/
+Expressjs API server 🎉
 
 To get a valid Agroa access token:
 
-https://enigmatic-headland-66658.herokuapp.com/access-token/?channel={channel}&user={bar}
+http://localhost:3000/access-token/?channel={channel}&user={bar}
 
 Params:
 
 - channel: channel name
-- user: user id. Optional, if not passed it, token will created by the default user id which is `0`.
+- user(Optional): user id, If not passed it, token will created by the default user id which is `0`.
+
+Sample request:
+
+http://localhost:3000/access-token/?channel=123
+
+Response:
+
+`{"token":"token string"}`
 
 ## Prerequisites
 
@@ -21,8 +29,8 @@ You will need the following things properly installed on your computer.
 
 ## Installation
 
-* `git clone https://github.com/mocclubhouseteam/metal-bat-api.git` this repository
-* `cd metal-bat-api`
+* `git clone https://github.com/tningjs/bla-bla-api.git` this repository
+* `cd bla-bla-api`
 * `yarn install`
 
 ## Running locally

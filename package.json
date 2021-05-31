@@ -1,8 +1,8 @@
 {
-  "name": "metal-bat-api",
+  "name": "bla-bla-api",
   "version": "0.0.0",
   "private": true,
-  "description": "Small description for metal-bat-api goes here",
+  "description": "Small description for bla-bla-api goes here",
   "license": "MIT",
   "author": "Tao Ning",
   "scripts": {
